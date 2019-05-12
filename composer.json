@@ -1,18 +1,20 @@
 {
-    "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "name": "HSPS",
+    "description": "heavy-smart-permissions-system",
     "type": "project",
     "keywords": [
-        "framework",
-        "thinkphp",
-        "ORM"
+        "permission"
     ],
-    "homepage": "http://thinkphp.cn/",
+    "homepage": "https://github.com/xx9090950/heavy-smart-permissions-system",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
+            "name": "gongruixiang",
+            "email": "xx9090950@gmail.com"
+        },
+        {
+            "name":"fujie",
+            "email":""
         }
     ],
     "require": {
@@ -25,9 +27,11 @@
         }
     },
     "extra": {
-        "think-path": "thinkphp"
+        "think-path": "thinkphp",
+        "version":"0.0.01"
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+
 }
