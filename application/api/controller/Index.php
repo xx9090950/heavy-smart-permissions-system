@@ -13,25 +13,4 @@ class Index
         return 'hello,' . $name;
     }
 
-    public function kill()
-    {
-        //假装是用户的唯一标识
-        $uuid=md5(uniqid('user').time());
-        //创建连接redis对象
-        $redis = new \Redis();
-        $redis->connect('127.0.0.1', 6379);
-        $listKey="2019_04_15_goods_list";
-        $orderKey="2019_04_15_buy_order";
-        $failUserNum="2019_04_15_fail_user_num";
-        if ($goodsId=$redis->lPop($listKey)) {
-            //秒杀成功
-            //将幸运用户存在集合中
-            $redis->hSet($orderKey,$goodsId,$uuid);
-        }else{
-            //秒杀失败
-            //将失败用户计数
-            $redis->incr($failUserNum);
-        }
-        echo "SUCCESS";
-    }
 }

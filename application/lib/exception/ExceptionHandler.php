@@ -9,10 +9,10 @@
 namespace app\lib\exception;
 
 //用于继承tp5的全局异常处理类,用来重写其中的render方法来做最终的异常处理
-use think\Config;
+
 use think\exception\Handle;
 use Exception;
-use think\Log;
+use think\facade\Log;
 
 //总的异常处理类
 class ExceptionHandler extends Handle
@@ -31,7 +31,7 @@ class ExceptionHandler extends Handle
             $this->errorCode = $e->errorCode;
         } else {
             //判断配置中的debug是否开启确定开发或生产模式
-            if (Config::get('app_debug')) {
+            if (config('app_debug')) {
                 //如果是开发模式
                 return parent::render($e);
 
@@ -61,12 +61,6 @@ class ExceptionHandler extends Handle
      */
     private function recordErrorLog(Exception $e)
     {
-        //由于在config文件中关闭了tp5自己的日志系统,我们需要重新初始化下
-        Log::init([
-            'type' => 'file',
-            'path' => LOG_PATH,
-            'level' => ['error']
-        ]);
         //记录日志,传入异常的信息
         Log::record($e->getMessage(), 'error');
     }
