@@ -14,7 +14,7 @@
         },
         {
             "name":"fujie",
-            "email":""
+            "email":"fujietodo@126.com"
         }
     ],
     "require": {
@@ -32,6 +32,6 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
+    }
 
 }
