@@ -11,7 +11,7 @@ namespace app\api\validate;
 
 use app\lib\exception\ParameterException;
 use think\Exception;
-use think\Request;
+use think\facade\Request;
 use think\Validate;
 
 class BaseValidate extends Validate
