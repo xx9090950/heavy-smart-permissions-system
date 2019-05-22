@@ -10,13 +10,16 @@ namespace app\api\controller;
 
 
 use app\api\model\User;
+use app\api\service\Group;
 
 
 class Cli
 {
     public function test()
     {
-        $userService=new \app\api\service\User();
-        $userService->getUserNode(1);
+//        $userService=new \app\api\service\User();
+//        $res=$userService->getUserNode(1);
+        $data=Group::isSuperAdmin(1);
+        dump($data);
     }
 }
