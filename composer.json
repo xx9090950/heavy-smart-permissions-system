@@ -1,0 +1,37 @@
+{
+    "name": "HSPS",
+    "description": "heavy-smart-permissions-system",
+    "type": "project",
+    "keywords": [
+        "permission"
+    ],
+    "homepage": "https://github.com/xx9090950/heavy-smart-permissions-system",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "gongruixiang",
+            "email": "xx9090950@gmail.com"
+        },
+        {
+            "name":"fujie",
+            "email":"fujietodo@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "topthink/framework": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "application"
+        }
+    },
+    "extra": {
+        "think-path": "thinkphp",
+        "version":"0.0.01"
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+
+}
