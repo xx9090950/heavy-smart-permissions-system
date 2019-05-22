@@ -14,8 +14,7 @@ Route::get('think', function () {
     return 'hello,ThinkPHP5!';
 });
 
-Route::get('hello/:name', 'index/hello');
+Route::get('hello/:name', 'api/index/hello');
 
-return [
+Route::get('cli/test','api/Cli/test');
 
-];

@@ -9,7 +9,9 @@
 namespace app\api\model;
 
 
-class RoleUser extends BaseModel
+use think\model\Pivot;
+
+class RoleUser extends Pivot
 {
     protected $pk='id';
 
