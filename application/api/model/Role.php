@@ -31,4 +31,13 @@ class Role extends BaseModel
     {
         return $this->belongsToMany(Node::class,RoleNode::class);
     }
+
+    /**
+     * 关联组织 多对多
+     * @return \think\model\relation\BelongsToMany
+     */
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class,RoleGroup::class);
+    }
 }
