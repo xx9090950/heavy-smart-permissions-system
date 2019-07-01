@@ -22,10 +22,17 @@ class Group extends BaseModel
     }
 
     /**
-     * 关联角色 多对多
+     * 关联角色 多对多 (多对多关系用于授权)
      * @return \think\model\relation\BelongsToMany
      */
     public function roles(){
         return $this->belongsToMany(Role::class,RoleGroup::class);
+    }
+
+    /**
+     * 关联角色 多对一 (多对一关系用于角色挂在组织上)
+     */
+    public function rolesForGroup(){
+        return $this->hasMany(Role::class);
     }
 }

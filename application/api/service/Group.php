@@ -9,6 +9,8 @@
 namespace app\api\service;
 
 use app\api\model\User as UserModel;
+use app\api\model\Group as GroupModel;
+use app\lib\exception\EmptyData;
 
 class Group
 {
@@ -35,5 +37,19 @@ class Group
             }
         }
         return false;
+    }
+
+    /**
+     * 查询角色列表，以组织的形式生成
+     * @param int $groupId
+     * @return mixed
+     * @throws EmptyData
+     */
+    public function getRoleListByGroup($groupId=0){
+        $groupRole=GroupModel::All(['pid'=>$groupId],['rolesForGroup'],true);
+        if (empty($groupRole)) {
+            throw new EmptyData();
+        }
+        return $groupRole;
     }
 }

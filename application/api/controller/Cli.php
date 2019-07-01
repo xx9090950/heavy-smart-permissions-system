@@ -19,7 +19,7 @@ class Cli
     {
 //        $userService=new \app\api\service\User();
 //        $res=$userService->getUserNode(1);
-        $data=Group::isSuperAdmin(1);
+        $data=(new Group())->getRoleListByGroup();
         dump($data);
     }
 }
