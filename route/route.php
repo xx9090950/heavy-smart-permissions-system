@@ -18,3 +18,5 @@ Route::get('hello/:name', 'api/index/hello');
 
 Route::get('cli/test','api/Cli/test');
 
+Route::get("api/:version/role/list","api/backstage.:version.Role/roleList");
+
